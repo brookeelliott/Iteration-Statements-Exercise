@@ -3,11 +3,11 @@
     public class Program
     {
         //LukeWarm Section: Create methods below
-        
-        
+
+
         //Write a method that will print to the console all numbers 1000 through - 1000
 
-    public  TwoThousandNums()
+        static void TwoThousandNums()
         {
             Console.WriteLine("Sorry, I'm about to blow up your terminal printing all these numbers.");
             int i = 1000;
@@ -16,102 +16,144 @@
                 Console.WriteLine($"{i}");
                 i--;
 
-            } while (i >= -1000);
-        }    
-        
+            } while (i > -1001);
+
+        }
+
         //Write a method that will print to the console numbers 3 through 999 by 3 each time
 
-    public int CountByThree()
+        static void CountByThree()
         {
             Console.WriteLine("More numbers aaaaaggggghhhhhhh!!!");
             int j = 3;
             while (j <= 999)
             {
                 Console.WriteLine($"{j}");
-                j = j + 3;
+                j += 3;
             }
-        }        
+        }
         //Write a method to accept two integers as parameterss and check whether they are equal or not
-        
-    public var IsEqual()
+
+        static void IsEqual(int num1, int num2)
         {
-            Console.WriteLine("Give me a first integer.");
-            var num1 = int.TryParse(Console.Readline());
+            //bool res1;
+            //bool res2;
 
-            Console.WriteLine("Give me a second integer.");
-            var num2 = int.TryParse(Console.Readline());
+            //Console.WriteLine("Give me a first integer.");
+            //res1 = int.TryParse(Console.ReadLine(), out int num1);
 
-            bool areEqual;
-            if(num1 = num2 ? areEqual = true : areEqual = false);
-            if(areEqual = true ? Console.WriteLine("The numbers are equal!") : Console.Writeline("The numbers are not equal."));
-        }    
-        
+            //Console.WriteLine("Give me a second integer.");
+            //res2 = int.TryParse(Console.ReadLine(), out int num2);
+
+            //if (res1 || res2 == false)
+            //{
+            //    Console.WriteLine("This isnt an integer");
+            //}
+            //else
+            //{
+            if (num1 != num2)
+            {
+                Console.WriteLine("The numbers are not equal.");
+            }
+
+            Console.WriteLine("The numbers are equal!");
+        }
+
+
+
         //Write a method to check whether a given number is even or odd
-    public var IsEven(var UserNum)
+        static void IsEven(int UserNum)
         {
             bool EvenOddBool;
-            if(UserNum % 2 > 0 ? EvenOddBool = true : EvenOddBool = fasle);
-            if(EvenOddBool = True ? Console.WriteLine("The number is even!") : Console.WriteLine("The number is odd!"));
+            if (UserNum % 2 != 0)
+            {
+                EvenOddBool = true;
+            }
+            else
+            {
+                EvenOddBool = false;
+            }
+
+            if (EvenOddBool == true)
+            { Console.WriteLine("The number is even!"); }
+            else
+            { Console.WriteLine("The number is odd!"); }
+
 
         }
 
-        
+
         //Write a method to check whether a given number is positive or negative
-    public var PosOrNeg(var InputNum)
+        static void PosOrNeg(int InputNum)
         {
-            bool PosOrNegBool;
-            if(InputNum >= 0 ? PosOrNeg = true : PosOrNeg = false);
-            if(PosOrNegBool = True ? Console.WriteLine("The number is positive!") : Console.WriteLine("The number is negative!"));
+
+            if (InputNum >= 0)
+            {
+                Console.WriteLine("The number is positive!");
+            }
+            else
+            {
+                Console.WriteLine("The number is negative!");
+            }
         }
-    
-        
-        
+
+
+
         //Write a method to read the age of a candidate and determine whether they can vote.
-    public int VotingAge(int UserAge)
+        static void VotingAge(int UserAge)
         {
-            bool CanVote;
-            if(UserAge >= 18 ? CanVote = true : CanVote = fasle);
-            if(CanVote = True ? Console.WriteLine("You can vote!") : Console.WriteLine("You cannot vote :("));
+            Console.WriteLine((UserAge >= 18) ? "You can vote!" : "You cannot vote :(");
         }
-        
-        
-        
-        
+
+
+
+
         //Hint: Use Parse or the safer TryParse() for an extra challenge
-        
+
         //Parse()
-        
+
         //TryParse()
 
         //Heatin Up Section:
         //Write a method to check if an integer(from the user) is in the range -10 to 10
-    public int TenNumRange()
+        static void TenNumRange()
         {
-         Console.WriteLine("Give me a whole number(integer please).");
-         var UserNum = int.TryParse(Console.Readline());
+            Console.WriteLine("Give me a whole number(integer please).");
+            var userNum = int.TryParse(Console.ReadLine(), out int intNum);
 
-         if (UserNum >= -10 && UserNum <= 10)
+            if (userNum == false)
+            {
+                Console.WriteLine("This isnt an integer!! Try Again Please.");
+            }
+
+            if (intNum >= -10 && intNum <= 10)
             {
                 Console.WriteLine("The number is between -10 and 10!!!!");
-            }   
+            }
             else
             {
                 Console.WriteLine("The number is outside of the accepted range (-10 to 10)... sorry :(");
             }
         }
 
-        
-        //Write a method to display the multiplication table(from 1 to 12) of a given integer
-    public int NumtiplicationTableFunTimes()
-        {
-        Console.WriteLine("Give me any integer!!!");
-        var MultNum = int.TryParse(Console.Readline());
 
-        Console.WriteLine("Multiplication table (1 through 12)");
-        for(int y = 1; y < 13; y++)
+        //Write a method to display the multiplication table(from 1 to 12) of a given integer
+        static void NumtiplicationTableFunTimes()
+        {
+            Console.WriteLine("Give me any integer!!!");
+            var multNum = int.TryParse(Console.ReadLine(), out int multiplyMe);
+
+            if (multNum == false)
             {
-                var Product = MultNum * y;
-                Console.WriteLine($"{y} times {MultNum} = {product}");
+                Console.WriteLine("This isnt an integer!! Try Again Please.");
+            }
+
+            Console.WriteLine("Multiplication table (1 through 12)");
+
+            for (int y = 1; y < 13; y++)
+            {
+                var Product = multiplyMe * y;
+                Console.WriteLine($"{y} times {multiplyMe} = {Product}");
             }
 
 
@@ -125,7 +167,7 @@
         {
             TwoThousandNums();
             CountByThree();
-            IsEqual();
+            IsEqual(4, 5);
             IsEven(7);
             PosOrNeg(-4);
             VotingAge(21);
@@ -133,6 +175,7 @@
             NumtiplicationTableFunTimes();
 
 
+
         }
     }
-}
+ }
